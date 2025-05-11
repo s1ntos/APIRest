@@ -1,66 +1,49 @@
 package com.api.tarefas.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.api.tarefas.model.Tarefa;
+import com.api.tarefas.service.TarefasService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
-import com.api.tarefas.model.Tarefa;
+import java.util.List;
 
-@RestController //A classe é uma controladora Rest
-@CrossOrigin(origins = "*")
-@RequestMapping("/tarefas") //disponibiliza os serviços na URL
-public class TarefaController { 
+@RestController // Indica que essa classe é um controller REST
+@CrossOrigin(origins = "*") // Permite requisições de qualquer origem (CORS)
+@RequestMapping("/tarefas") // Define o caminho base da API
+public class TarefaController {
 
-    private List<Tarefa> tarefas = new ArrayList<>();
-    private int proximoId = 1;
-    
-    //métodos http
-    @PostMapping("")
-    public Tarefa criarTarefa(@RequestBody Tarefa tarefa) { 
-        tarefa.setId(proximoId++);
-        tarefas.add(tarefa);
-        return tarefa;
+    @Autowired
+    private TarefasService service;
+
+    @PostMapping
+    public ResponseEntity<Tarefa> criarTarefa(@RequestBody Tarefa tarefa) {
+        Tarefa nova = service.criar(tarefa);
+        return ResponseEntity.status(HttpStatus.CREATED).body(nova);
     }
 
-    @GetMapping("")
-    public List<Tarefa> buscarTarefas() { 
-        return tarefas;
+    @GetMapping
+    public ResponseEntity<List<Tarefa>> buscarTarefas() {
+        return ResponseEntity.ok(service.listar());
     }
 
     @GetMapping("/{id}")
-    public Tarefa buscarTarefa(@PathVariable int id) { 
-        for (Tarefa tarefa : tarefas) { 
-            if (tarefa.getId() == id) { 
-                return tarefa;
-            }
-        }
-        return null;
+    public ResponseEntity<Tarefa> buscarTarefa(@PathVariable int id) {
+        Tarefa tarefa = service.buscarporid(id);
+        return (tarefa != null) ? ResponseEntity.ok(tarefa) : ResponseEntity.notFound().build();
     }
 
     @PutMapping("/{id}")
-    public Tarefa atualizarTarefa(@PathVariable int id, @RequestBody Tarefa tarefa) { 
-        for (int i = 0; i < tarefas.size(); i++) { 
-            Tarefa t = tarefas.get(i);
-            if (t.getId() == id) { 
-                t.setDescricao(tarefa.getDescricao());
-                t.setCompleta(tarefa.isCompleta());
-                return t;
-            }
-        }
-        return null;
+    public ResponseEntity<Tarefa> atualizarTarefa(@PathVariable int id, @RequestBody Tarefa tarefa) {
+        Tarefa atualizada = service.atualizar(id, tarefa);
+        return (atualizada != null) ? ResponseEntity.ok(atualizada) : ResponseEntity.notFound().build();
     }
 
     @DeleteMapping("/{id}")
-    public boolean deletarTarefa(@PathVariable int id) { 
-        for (int i = 0; i < tarefas.size(); i++) { 
-            Tarefa tarefa = tarefas.get(i);
-            if (tarefa.getId() == id) { 
-                tarefas.remove(i);
-                return true;
-            }
-        }
-        return false;
+    public ResponseEntity<Void> deletarTarefa(@PathVariable int id) {
+        boolean deletado = service.deletar(id);
+        return deletado ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
 }
+
 

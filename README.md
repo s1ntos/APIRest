@@ -7,6 +7,7 @@ Uma API REST desenvolvida em Java. Permite utilziar métodos HTTP.
 - java
 - spring framework
 - MySQL
+- React JS
 
 ## 📂 Estrutura Básica do Projeto
 ```

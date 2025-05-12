@@ -29,6 +29,7 @@ public class Tarefa {
 
     //getters e setters
 
+
     public int getHora() {
         return hora;
     }

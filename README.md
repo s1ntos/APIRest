@@ -1,21 +1,25 @@
-# API REST Simples
+# API REST 
 
 ## 📌 Descrição
-Uma API REST simples desenvolvida em Java. Permite utilziar métodos HTTP.
+Uma API REST desenvolvida em Java. Permite utilziar métodos HTTP.
 
 ## 🚀 Tecnologias
 - java
 - spring framework
+- MySQL
 
 ## 📂 Estrutura Básica do Projeto
 ```
 📦 tarefas
- ┣ 📂com.api.tarefas
- ┃ ┣ 📜 TarefasApplication.java
- ┃ ┣ 📂controller
+ ┣ ┗ 📂controller
  ┃ ┃ ┗ 📜 TarefaController.java
  ┃ ┗ 📂model
  ┃ ┃ ┗ 📜 Tarefa.java
+ ┃ ┗ 📂repository
+ ┃ ┃ ┗ 📜 TarefaRepository.java
+ ┃ ┗ 📂service
+ ┃ ┃ ┗ 📜 TarefasService.java
+ ┃ TarefasApplication.java
 ```
 
 
@@ -30,4 +34,4 @@ A API estará disponível em: `http://localhost:8080/tarefas`
 | DELETE | `/tarefas/:id` | Remove um item             |
 
 ---
-👨‍💻 Desenvolvido por [joão Paulo]
+👨‍💻 Em Desenvolvimento por [joão Paulo]

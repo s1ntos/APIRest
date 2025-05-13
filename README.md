@@ -39,13 +39,16 @@ Projeto completo com **API REST desenvolvida em Spring Boot** e **interface em R
 ```
 Vá até a pasta do front:
 cd frontend
-
+```
+```
 Instale as dependências:
 npm install
-
+```
+```
 Rode a aplicação:
 npm start
-
+```
+```
 Acesse no navegador:
 http://localhost:3000
 ```
@@ -56,13 +59,13 @@ http://localhost:3000
 ```
 java com.api.tarefas.TarefasApplication
 Certifique-se de estar no mesmo nível da pasta src ou de ter o classpath corretamente definido.
-
-
+```
+```
 Acesse o Swagger:
 http://localhost:8080/swagger-ui.html
-
+```
+```
 A aplicação será iniciada e poderá ser acessada em:
-
 http://localhost:8080
 ```
 
@@ -80,9 +83,5 @@ http://localhost:8080
 
 ## 👨‍💻 Autor
 
-Desenvolvido por **João Paulo**  
-📫 Em caso de dúvidas ou sugestões, entre em contato!
-| DELETE | `/tarefas/:id` | Remove um item             |
-
----
 👨‍💻 Em Desenvolvimento por [joão Paulo]
+📫 Em caso de dúvidas ou sugestões, fique a vontade para entrar em contato!

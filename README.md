@@ -56,6 +56,32 @@ http://localhost:3000
 ```
 java com.api.tarefas.TarefasApplication
 Certifique-se de estar no mesmo nível da pasta src ou de ter o classpath corretamente definido.
+
+
+Acesse o Swagger:
+http://localhost:8080/swagger-ui.html
+
+A aplicação será iniciada e poderá ser acessada em:
+
+http://localhost:8080
+```
+
+## ✅ Funcionalidades Implementadas
+
+- [x] Criar tarefa
+- [x] Listar tarefas
+- [ ] Deletar tarefa(em breve)
+- [x] Validação com DTO
+- [x] Swagger UI documentando a API
+- [x] Integração com front-end React
+- [ ] Edição de tarefa(em breve)
+- [ ] Filtro por hora ou status(em breve)
+- [ ] Autenticação com Spring Security (em breve)
+
+## 👨‍💻 Autor
+
+Desenvolvido por **João Paulo**  
+📫 Em caso de dúvidas ou sugestões, entre em contato!
 | DELETE | `/tarefas/:id` | Remove um item             |
 
 ---

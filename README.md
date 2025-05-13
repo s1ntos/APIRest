@@ -83,5 +83,5 @@ http://localhost:8080
 
 ## 👨‍💻 Autor
 
-👨‍💻 Em Desenvolvimento por [joão Paulo]
+👨‍💻 Em Desenvolvimento por joão Paulo
 📫 Em caso de dúvidas ou sugestões, fique a vontade para entrar em contato!

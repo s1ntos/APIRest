@@ -4,14 +4,14 @@ Projeto completo com **API REST desenvolvida em Spring Boot** e **interface em R
 
 
 ## 📁 Estrutura do Projeto
----
 
+```
 /
 ├── frontend/ → src → codigo fonte do frontend
 ├── src/ → Código-fonte do back-end (API)
 ├── pom.xml → Projeto Maven da API
+```
 
----
 
 ## 🚀 Tecnologias Utilizadas
 

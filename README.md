@@ -1,37 +1,82 @@
-# API REST 
+## 📁 Estrutura do Projeto
+---
 
-## 📌 Descrição
-Uma API REST desenvolvida em Java. Permite utilziar métodos HTTP.
+/
+├── frontend/ → src → codigo fonte do frontend
+├── src/ → Código-fonte do back-end (API)
+├── pom.xml → Projeto Maven da API
 
-## 🚀 Tecnologias
-- java
-- spring framework
+---
+
+## 🚀 Tecnologias Utilizadas
+
+### 🔧 Back-end (Spring Boot)
+
+- Java 17
+- Spring Boot 3.x
+- Spring Web
+- Spring Data JPA
+- Hibernate Validator
 - MySQL
-- React JS
+- Springdoc OpenAPI (Swagger)
 
-## 📂 Estrutura Básica do Projeto
+### 💻 Front-end (React)
+
+- React 18
+- Axios
+- CSS Puro
+
+---
+
+## ⚙️ Como executar o projeto
+
+### ▶️ Front-end (frontend)
 ```
-📦 tarefas
- ┣ ┗ 📂controller
- ┃ ┃ ┗ 📜 TarefaController.java
- ┃ ┗ 📂model
- ┃ ┃ ┗ 📜 Tarefa.java
- ┃ ┗ 📂repository
- ┃ ┃ ┗ 📜 TarefaRepository.java
- ┃ ┗ 📂service
- ┃ ┃ ┗ 📜 TarefasService.java
- ┃ TarefasApplication.java
+Vá até a pasta do front:
+cd frontend
+
+Instale as dependências:
+npm install
+
+Rode a aplicação:
+npm start
+
+Acesse no navegador:
+http://localhost:3000
+```
+### ▶️ API (Back-end)
+
+1. Acesse a pasta onde está o arquivo da classe principal:
+
+```
+java com.api.tarefas.TarefasApplication
+Certifique-se de estar no mesmo nível da pasta src ou de ter o classpath corretamente definido.
+
+
+Acesse o Swagger:
+http://localhost:8080/swagger-ui.html
+
+A aplicação será iniciada e poderá ser acessada em:
+
+http://localhost:8080
 ```
 
+## ✅ Funcionalidades Implementadas
 
-A API estará disponível em: `http://localhost:8080/tarefas`
+- [x] Criar tarefa
+- [x] Listar tarefas
+- [ ] Deletar tarefa(em breve)
+- [x] Validação com DTO
+- [x] Swagger UI documentando a API
+- [x] Integração com front-end React
+- [ ] Edição de tarefa(em breve)
+- [ ] Filtro por hora ou status(em breve)
+- [ ] Autenticação com Spring Security (em breve)
 
-## 🔍 Rotas Principais
-| Método | Rota         | Descrição                  |
-|--------|--------------|----------------------------|
-| GET    | `/tarefas`     | Lista todos os itens       |
-| POST   | `/tarefas`     | Cria um novo item          |
-| PUT    | `/tarefas/:id` | Atualiza um item existente |
+## 👨‍💻 Autor
+
+Desenvolvido por **João Paulo**  
+📫 Em caso de dúvidas ou sugestões, entre em contato!
 | DELETE | `/tarefas/:id` | Remove um item             |
 
 ---

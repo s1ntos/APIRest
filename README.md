@@ -46,7 +46,7 @@ npm install
 ```
 ```
 Rode a aplicação:
-npm start
+npm run start
 ```
 ```
 Acesse no navegador:

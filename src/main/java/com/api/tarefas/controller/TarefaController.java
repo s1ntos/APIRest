@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/tarefas")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "-")
 public class TarefaController {
 
     @Autowired
